@@ -17,7 +17,9 @@ const containerItems = document.getElementById('container-items')
 
 
 const loadImagens = (imagens,container)=>{
+    //percorrendo o array passado no parametro da função
     imagens.forEach(imagen=> {
+        //Criando uma div chmada item que vai guardar a imagem e vai inserir no container passado no paramentro da função
         container.innerHTML +=`
         <div class ='item'>
         <img src='${imagen.url}'
@@ -34,16 +36,16 @@ loadImagens(imagens, containerItems);
 let items = document.querySelectorAll('.item');
 
 const previous=()=>{
-    //Ele está pegando o primeiro elemento da lista de item e adicionando no final do containerItems
+    //Ele está pegando o primeiro elemento da lista de items e adicionando no final do containerItems
     containerItems.appendChild(items[0]);
-    //Aqui ele está carregando a agora com o primeiro item no final
+    //Aqui ele está carregando a agora com o primeiro elemento no final
     items = document.querySelectorAll('.item');
 }
 
 const next=()=>{
     //Aqui ele está pegando a posição do ultimo elemento de items
     const lastItem=items[items.length-1]
-    //Aqui ele está pegando o ultio elemento e inserindo antes(em primeiro lugar)
+    //Aqui ele está pegando o ultimo elemento e inserindo antes(em primeiro lugar)
     containerItems.insertBefore(lastItem, items[0]);
     //Aqui ele está carregando a lista após as mudanças
     items = document.querySelectorAll('.item');
